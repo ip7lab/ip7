@@ -20,9 +20,8 @@
           class="inline-flex items-center gap-1.5 rounded-md px-1 py-1 text-lg font-semibold text-foreground no-underline hover:opacity-80 transition-opacity">
           <brandIcon />
           <span class="tracking-tight truncate">
-            <span class="font-bold">IP</span><span class="font-extralight">Check.</span>
-            <span class="font-extralight"
-              :class="{ 'jn-shimmer-light': shimmer && !isDarkMode, 'jn-shimmer-dark': shimmer && isDarkMode }">ing</span>
+            <span class="font-bold">IP7</span>
+            
           </span>
         </a>
       </div>

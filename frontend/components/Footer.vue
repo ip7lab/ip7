@@ -14,7 +14,7 @@
           <div class="inline-flex items-center gap-1.5 text-xl font-semibold text-foreground">
             <brandIcon />
             <span class="tracking-tight">
-              <span class="font-bold">IP</span><span class="font-extralight">Check.ing</span>
+              <span class="font-bold">IP7</span>
             </span>
           </div>
           <p class="mt-2">{{ t('footer.Tagline') }}</p>

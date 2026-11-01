@@ -1,210 +1,27 @@
-# 🧰 MyIP - A Better IP Toolbox
+# IP7 — IP 检测站修改版源码
 
-<div align="center">
+本站 https://ip7.de5.net 基于开源项目 MyIP 构建，遵循 AGPL-3.0 协议。
 
-![IPCheck.ing Banner](https://raw.githubusercontent.com/jason5ng32/MyIP/main/public/github/gh_banner.png)
+## 上游与部署版本
 
-<a href="https://trendshift.io/repositories/5332" target="_blank"><img src="https://trendshift.io/api/badge/repositories/5332" alt="jason5ng32%2FMyIP | Trendshift" style="width: 250px; height: 55px;" width="250" height="55"/></a>
+- 上游项目：jason5ng32/MyIP（https://github.com/jason5ng32/MyIP）
+- 上游许可证：AGPL-3.0（本仓库沿用 AGPL-3.0，LICENSE 与版权声明保留原样）
+- 线上部署版本：MyIP v8.0.0，标签提交 1a9988388cc99a99593a93e2b3a5bdd46bec61f7（2026-10-23 发布）
+- 线上部署方式：官方 Docker 镜像 jason5ng32/myip:latest（镜像摘要 sha256:ba54d22576f1cd86dcfb9c453fcf805bd6817ca9bed234a6fd529f5f0f19fb31，2026-10-23 构建，2026-11-01 部署于悉尼机），仅绑回环 127.0.0.1:18966，经 OpenResty 反代对外提供 HTTPS 服务
+- 本仓库由上游公开仓库导入，完整保留上游源码与历史；下述修改点以反代层与静态页形式在线上生效，不在镜像内。
 
-[![Mentioned in Awesome Self Hosted](https://awesome.re/mentioned-badge.svg)](https://github.com/awesome-selfhosted/awesome-selfhosted)
+## 本站修改点（相对上游 v8.0.0）
 
-![GitHub Repo stars](https://img.shields.io/github/stars/jason5ng32/MyIP)
-![GitHub forks](https://img.shields.io/github/forks/jason5ng32/myip)
-![Docker Pulls](https://img.shields.io/docker/pulls/jason5ng32/myip)
+1. 品牌替换：页眉与页面标题中的 IPCheck.ing 字标改为 IP7 自有品牌；启动加载动画与全站头像中的原作者黑客形象改为定位针图形 + IP7 字标 SVG，加载动画为图形脉冲、无人物形象。
+2. 页脚注入：首页底部增加 IP7 品牌横条，含四个场景页入口、隐私页入口、联盟返佣披露与诚实口径说明，并加「源代码」链接（指向本仓库）与一行 AGPL-3.0 声明。
+3. 场景层：新增四个静态场景页（跨境电商注册、AI 工具、金融与加密账户、境外电话办理），含清单、结果解读、诚实口径与返佣披露；新增隐私政策页，承诺大陆用户 IP 在境外悉尼机解析、默认不把原始 IP 发给第三方 API。
+4. 文案调整：城市字段旁标注数据来源并注明「城市级定位仅供参考」；IPv6 探针无结果时显示正常口径文案「未检测到 IPv6：当前网络未提供 IPv6，属正常情况」，不用报错样式；连通性测试区提示「开关代理后请刷新页面重新测试，本结果不会自动更新」。
+5. 部署配置：OpenResty 反代配置（80/443、ACME 与 ZeroSSL 验证路径、场景页与隐私页静态路由）与上述静态页，见本仓库 ip7-overlay/ 目录说明。
 
-[![Website](https://img.shields.io/website?url=https%3A%2F%2Fipcheck.ing&up_message=online&label=IPCheck.ing 'IPCheck.ing')](https://ipcheck.ing)
-![PWA](https://img.shields.io/badge/PWA-Supported-blue)
+## 密钥与隐私
 
-![CodeQL](https://github.com/jason5ng32/MyIP/actions/workflows/github-code-scanning/codeql/badge.svg?branch=main)
-![Docker Build and Push](https://github.com/jason5ng32/MyIP/actions/workflows/docker-image.yml/badge.svg?branch=main)
-[![CI](https://github.com/jason5ng32/MyIP/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/jason5ng32/MyIP/actions/workflows/ci.yml)
+本仓库不含任何密钥凭据：MaxMind 密钥、环境变量、证书私钥一律不在仓库内；本地配置以 `.env.example` 占位。线上反代与证书文件仅存于部署服务器，不进本仓库。
 
-[English](README.md) | [简体中文](README_ZH.md) | [繁體中文](README_ZH-TW.md) | [Русский](README_RU.md) | [Français](README_FR.md) | [Português (BR)](README_PT-BR.md) | [Shqip](README_SQ.md) | [ไทย](README_TH.md) | [हिन्दी](README_HI.md)
+## 许可证
 
-An open-source, all-in-one IP toolbox: IP lookup from multiple sources, connectivity tests, WebRTC & DNS-leak detection, speed test, MTR, censorship checks, Whois, and more — self-hostable with one Docker command.
-
-👉 Demo: [https://ipcheck.ing](https://ipcheck.ing)
-
-Feel free to bookmark the demo or deploy your own.
-
-[![Deploy with Docker](https://raw.githubusercontent.com/jason5ng32/MyIP/main/public/github/Docker.svg)](https://hub.docker.com/r/jason5ng32/myip)
-
-</div>
-
-## 👀 Features
-
-### 🪪 Your IP & Identity
-
-* 🛜 **IP Cards**: Detects your IPv4 and IPv6 from multiple independent sources side by side — country, region, city, ASN, organization, and the IP's local time zone.
-* 🔍 **Query IP**: Looks up the same detailed information for any IP address you're curious about.
-* 🧾 **IP History**: Keeps a local record of the IPs you've been seen with, filterable by type and country — stored in your browser only.
-* 🖥️ **Browser Fingerprint**: Calculates your browser fingerprint in multiple ways and shows what makes you identifiable.
-
-### 🕵️ Leaks & Privacy
-
-* 🚥 **WebRTC Detection**: Reveals the IP address exposed during WebRTC connections — including whether your browser's privacy hardening is on.
-* 🛑 **DNS Leak Test**: Shows which DNS endpoints resolve your queries, to evaluate the risk of DNS leaks when using VPNs or proxies.
-* 🛡️ **Ad & Tracker Blocking Test**: Checks what your ad blocker, browser, DNS filter, VPN or router actually blocks — ad networks, analytics, social trackers, error monitoring, device-maker telemetry, tracking scripts and element hiding.
-* 📋 **Security Checklist**: A 258-item personal cybersecurity checklist across 12 areas, with progress saved in your browser.
-
-### 📡 Network Tests
-
-* 🚦 **Connectivity Check**: Tests the reachability of up to 60 sites of your choice, with multi-round minimum-latency results — plus curated import lists, from country packs to AI, social, streaming, gaming, developer, and more. Based on the results, it signals whether global internet access is currently feasible for you.
-* 🚀 **Speed Test**: Measures your download, upload, and latency against edge networks.
-* ⏱️ **Global Latency Test**: Pings your target from probes all over the world — pick countries from all available Globalping probes, grouped by continent.
-* 🚉 **MTR Test**: Runs MTR from globally distributed probes to see the route packets actually take.
-* 🚧 **Censorship Check**: Shows where a website is blocked worldwide — and by what means.
-* 🚏 **Proxy Rule Test**: Verifies that your proxy software's rule configuration works the way you intended.
-
-### 🔦 Lookup & Infrastructure
-
-* 📟 **DNS Resolver**: Resolves a domain through multiple resolvers at once, grouped by country — an easy way to spot hijacking or contamination.
-* 📓 **Whois Search**: Performs Whois lookups for domain names, IP addresses, and AS numbers.
-* 🗄️ **MAC Lookup**: Identifies the vendor and details behind a physical address.
-* 🧮 **IP Calculator**: Subnet math, notation conversions and IPv6 interface details for any IP, prefix, range or list, computed locally.
-* 🛰️ **ASN Info & Upstream Topology**: Right on each IP card — AS details, historical announcements for the IP's prefix, and the upstream paths from its ASN to the Tier 1 backbone.
-* 🛂 **ASN Profile**: The full picture of any AS — registration with the raw Whois record, global rank and size, traffic and connection quality, where its IPv4 space is used, every announced prefix with its RPKI status, its upstreams, peers and customers, and the internet exchanges and data centers where it is present.
-* 📶 **Service Status**: Live availability of well-known services — Claude, OpenAI, GitHub, Cloudflare, and more — from their official status pages, with recent incidents.
-
-### ✨ Platform
-
-* 📤 **Shareable Reports**: Turn your test results into a diagnostic report — a read-only link with auto-expiry, AI-ready Markdown, or JSON.
-* ⌨️ **Curl API**: Get your IP from the terminal with a single `curl` command.
-* 🌍 **Earth Online**: A panel broadcasting global internet outage events as they happen.
-* 🌗 **Dark Mode**: Follows your system automatically, with a manual toggle.
-* 📲 **PWA**: Installable as an app on your phone and as a Chrome app on your desktop.
-* ⚡ **Keyboard Shortcuts**: Every function has one — press `?` to see the list.
-* 🔤 **Multiple Languages**: The UI ships in 6 languages, and adding yours takes one locale pack.
-
-## 📕 How to Use
-
-### Using Docker
-
-One command and you're up:
-
-```bash
-docker run -d -p 18966:18966 --name myip --restart always jason5ng32/myip:latest
-```
-
-Or click the "Deploy with Docker" button at the top of this page.
-
-### Deploying in a Node Environment
-
-Make sure you have Node.js installed, then clone the code:
-
-```bash
-git clone https://github.com/jason5ng32/MyIP.git
-```
-
-Install and build. This project uses pnpm — if you don't have it, install it first (npm ships with Node, so this command always works):
-
-```bash
-npm install -g pnpm
-pnpm install && pnpm run build
-```
-
-Run:
-
-```bash
-pnpm start
-```
-
-The program will run on port 18966.
-
-## ⚙️ Configuration
-
-> [!IMPORTANT]
-> **MaxMind GeoLite2 credentials are required.** They power IP geolocation and ASN lookups — without them, the MaxMind source returns 503. They're free: → [MaxMind Setup](https://docs.ipcheck.ing/developer/getting-started/maxmind-setup)
-
-> [!WARNING]
-> **`ALLOWED_DOMAINS` is required on a real domain.** It's the hostname allowlist for the backend API — without it, every request from a non-localhost domain gets 403. → [Reverse Proxy & Domains](https://docs.ipcheck.ing/developer/getting-started/reverse-proxy-and-domains)
-
-```bash
-docker run -d -p 18966:18966 \
-  -e MAXMIND_ACCOUNT_ID="YOUR_ACCOUNT_ID" \
-  -e MAXMIND_LICENSE_KEY="YOUR_LICENSE_KEY" \
-  -e DATASET_AUTO_UPDATE="true" \
-  -e ALLOWED_DOMAINS="your-domain.com" \
-  --name myip --restart always \
-  jason5ng32/myip:latest
-```
-
-Everything else — optional API keys, security & rate limiting, logging, Sentry, the curl API domains — is documented in the [Environment Variables reference](https://docs.ipcheck.ing/developer/reference/environment-variables).
-
-## 📖 Documentation
-
-Full guides live in the MyIP Docs Center: **[docs.ipcheck.ing](https://docs.ipcheck.ing)**
-
-* [Developer Guide](https://docs.ipcheck.ing/developer) — deployment, configuration, architecture, and contributing
-* [Knowledge Base](https://docs.ipcheck.ing/knowledge-base) — how to use every tool, step-by-step network diagnosis, and networking concepts
-
-## 🤝 Contributing
-
-Contributions are welcome! We keep a curated set of beginner-friendly tasks — each with exact file paths, acceptance criteria, and tests that guide you to a green build:
-
-* 🏷️ [Good first issues](https://github.com/jason5ng32/MyIP/labels/good%20first%20issue) — add a DNS resolver from your country, add curated site lists, translate the README into your language, polish translations, and more
-* 🌐 [TRANSLATING.md](TRANSLATING.md) — bring the UI to your language: a locale pack plus one registry line, and a **partial translation is a welcome first PR**
-* 📄 [CONTRIBUTING.md](CONTRIBUTING.md) — setup, conventions, and how PRs flow (target the `dev` branch)
-
-## 👩🏻‍💻 Advanced Usage
-
-<details>
-<summary>Proxy rules for checking your real IP and your proxy IP at the same time</summary>
-
-If you're using a proxy for internet access, consider adding this rule to your proxy configuration (modify it according to your client). This setup lets you check both your real IP and the IP when using the proxy:
-
-```ini
-# IP Testing
-IP-CIDR,1.0.0.2/32,Proxy,no-resolve
-IP-CIDR6,2606:4700:4700::1111/128,Proxy,no-resolve
-DOMAIN,4.ipcheck.ing,DIRECT
-DOMAIN,6.ipcheck.ing,DIRECT
-# Rule Testing
-DOMAIN,ptest-1.ipcheck.ing,Proxy1
-DOMAIN,ptest-2.ipcheck.ing,Proxy2
-DOMAIN,ptest-3.ipcheck.ing,Proxy3
-DOMAIN,ptest-4.ipcheck.ing,Proxy4
-DOMAIN,ptest-5.ipcheck.ing,Proxy5
-DOMAIN,ptest-6.ipcheck.ing,Proxy6
-DOMAIN,ptest-7.ipcheck.ing,Proxy7
-DOMAIN,ptest-8.ipcheck.ing,Proxy8
-DOMAIN,ptest-9.ipcheck.ing,Proxy9
-DOMAIN,ptest-10.ipcheck.ing,Proxy10
-DOMAIN,ptest-11.ipcheck.ing,Proxy11
-DOMAIN,ptest-12.ipcheck.ing,Proxy12
-```
-
-</details>
-
-## 💖 Sponsors & Supporters
-
-As an open source project, I'm very grateful to the following sponsors for their support:
-
-**Sponsors**
-
-<a href="https://www.swiftproxy.net/?ref=myip"><img src="https://res.ipcheck.ing/img/swiftproxy_logo.png" alt="SwiftProxy" height="48" /></a><br />
-<sub>↳ **<a href="https://www.swiftproxy.net/?ref=myip">SwiftProxy</a>** — High-quality rotating and static residential proxies, with 90M+ residential IPs across 220+ locations worldwide. It supports HTTP(S), SOCKS5, rotating and sticky sessions, with residential proxy plans starting at just $0.7/GB. Use code `PROXY90` for an additional 10% off.
-</sub>
-
-<a href="https://proxy-seller.com/?partner=4FEC1644D12240F4"><img src="https://res.ipcheck.ing/img/proxyseller_logo.png" alt="Proxy-Seller" height="48" /></a><br />
-<sub>↳ **<a href="https://proxy-seller.com/?partner=4FEC1644D12240F4">Proxy-Seller</a>** — offers private residential, mobile (4G/5G/LTE), ISP, and datacenter IPv4/IPv6 proxies with HTTP(S) and SOCKS5 support, 47M+ residential IPs in 220+ locations, precise country/city/ISP targeting, 99.7% uptime, and 24/7 support. MyIP users can use promo code `CHECKINGIP15` to get 15% off.
-</sub>
-
-<a href="https://v.ps/?utm_source=ipcheck.ing&utm_medium=referral&utm_campaign=github_readme&utm_content=en"><img src="https://res.ipcheck.ing/img/vps_logo.png" alt="V.PS" height="48" /></a><br />
-<sub>↳ **<a href="https://v.ps/?utm_source=ipcheck.ing&utm_medium=referral&utm_campaign=github_readme&utm_content=en">V.PS</a>** — High-performance KVM VPS with global locations, fast connectivity, and IPv4 & IPv6 included.</sub>
-
-----
-
-**Supporters**
-
-<p><a href="https://www.cloudflare.com/lp/project-alexandria/"><img src="https://res.ipcheck.ing/img/cloudflare_logo.png" alt="Cloudflare Project Alexandria" height="32" /></a></p>
-<p><a href="https://www.1password.com"><img src="https://res.ipcheck.ing/img/1password_logo.png" alt="1Password" height="32" /></a></p>
-<p><a href="https://www.greptile.com/"><img src="https://res.ipcheck.ing/img/greptile_logo.png" alt="Greptile" height="32" /></a></p>
-<p><a href="https://www.sentry.io"><img src="https://res.ipcheck.ing/img/sentry_logo.png" alt="Sentry" height="32" /></a></p>
-<p><a href="https://www.gitbook.com"><img src="https://res.ipcheck.ing/img/gitbook_logo.png" alt="GitBook" height="32" /></a></p>
-
-Interested in sponsoring MyIP? [Become a sponsor](https://github.com/sponsors/jason5ng32)
-
-## 📄 License
-
-[AGPL-3.0](LICENSE) © Jason Ng
+AGPL-3.0。按 AGPL 第 13 条，通过网络向公众提供本修改版服务时，本仓库即为对应源码的免费获取入口。

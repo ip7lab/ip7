@@ -36,7 +36,7 @@ export const DEFAULT_LIST_MEMBERS = [
     { id: 'youtube', name: 'YouTube', url: 'https://www.youtube.com/favicon.ico' },
     { id: 'github', name: 'GitHub', url: 'https://github.com/favicon.ico' },
     { id: 'cloudflare', name: 'Cloudflare', url: 'https://speed.cloudflare.com/favicon.ico', iconDomain: 'www.cloudflare.com', siteUrl: 'https://www.cloudflare.com' },
-    { id: 'claude', name: 'Claude', url: 'https://claude.com/favicon.ico' },
+    { id: 'claude', name: 'Claude', url: 'https://claude.ai/favicon.ico' },
     { id: 'chatgpt', name: 'ChatGPT', url: 'https://chatgpt.com/favicon.ico' },
     { id: 'wechat', name: 'WeChat', url: 'https://res.wx.qq.com/a/wx_fed/assets/res/NTI4MWU5.ico', iconDomain: 'weixin.qq.com', siteUrl: 'https://wx.qq.com' },
 ];

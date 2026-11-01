@@ -8,7 +8,7 @@ import logger from '../server/logger.js';
 
 // The project's own repository. GitHub requires a User-Agent on every
 // request; fetchUpstream's default project UA satisfies that.
-const REPO = 'jason5ng32/MyIP';
+const REPO = 'ip7lab/ip7';
 
 export default async (req, res) => {
     // Defensive; app.get() in backend-server.js already gates method, but a

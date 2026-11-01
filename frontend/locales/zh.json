@@ -1601,13 +1601,13 @@
     "Source": "IP 探针",
     "Country": "地区",
     "Region": "省份",
-    "City": "城市",
+    "City": "城市（各源口径不同，仅供参考）",
     "TimeZone": "时区",
     "ISP": "网络",
     "ASN": "ASN",
     "Coordinates": "经纬度",
     "IPv4Error": "获取失败或不存在 IPv4 地址",
-    "IPv6Error": "获取失败或不存在 IPv6 地址",
+    "IPv6Error": "未检测到 IPv6：当前网络未提供 IPv6，属正常情况",
     "type": "类型",
     "anonymity": {
       "label": "匿名网络",
@@ -1842,7 +1842,7 @@
   },
   "connectivity": {
     "Title": "网络连通性",
-    "Note": "测试你与网站的连通性，延迟数字越大，意味着你与该网站的连接速度越慢。你可以导入/添加其它你常用的网站到测试列表中，方便快速测试。",
+    "Note": "测试你与网站的连通性，延迟数字越大，意味着你与该网站的连接速度越慢。你可以导入/添加其它你常用的网站到测试列表中，方便快速测试。开关代理后请刷新页面重新测试，本结果不会自动更新。",
     "StatusWait": "待检测",
     "StatusTesting": "检测中…",
     "StatusAvailable": "可用",
@@ -2119,9 +2119,9 @@
     "description": "好用和开源的全能 IP 工具箱。轻松查看你的 IP 地址和信息、检查 IP 泄露、DNS 与 WebRTC 泄露检查、查看 IP 质量分数、浏览器指纹检查。还有网速测试、全球延迟测试、MTR 测试、Whois 查询等。",
     "keywords": "我的IP,IP工具,IP查询,IP泄露检测,DNS泄露检测,IP质量检测,WebRTC泄露检测,浏览器指纹检测,网速测试,全球延迟测试,MTR测试,DNS查询,Whois搜索",
     "footerLink": "https://github.com/jason5ng32/MyIP",
-    "copyRightName": "Originally from ",
-    "copyRightLink": "https://ipcheck.ing",
-    "copyRightLinkName": "IPCheck.ing"
+    "copyRightName": "本站基于开源项目 ",
+    "copyRightLink": "https://github.com/jason5ng32/MyIP",
+    "copyRightLinkName": "MyIP（IPCheck.ing）"
   },
   "helpModal": {
     "Title": "快捷键"

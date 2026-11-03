@@ -2156,7 +2156,7 @@
     ],
     "contactTitle": "Contact Us",
     "contact": [
-      "If you run into trouble using IP7 or deploying the MyIP project, head to the \"Help Center\" first. If you cannot find the answer there and are stuck, open an issue on GitHub or reach us by email.",
+      "If you run into trouble using IP7 or deploying the IP7 project, head to the \"Help Center\" first. If you cannot find the answer there and are stuck, open an issue on GitHub or reach us by email.",
       "And if you hit a bug and enjoy coding (or coding with AI), you are very welcome to send us a PR with your fix.",
       "Our email: i[AT]ipcheck.ing."
     ],

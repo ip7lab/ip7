@@ -2156,7 +2156,7 @@
     ],
     "contactTitle": "Nous contacter",
     "contact": [
-      "Si vous rencontrez un problème en utilisant IP7 ou en déployant le projet MyIP, commencez par chercher la réponse dans le « Centre d'aide ». Si vous ne la trouvez pas et que vous restez bloqué, ouvrez une issue sur GitHub ou écrivez-nous par email.",
+      "Si vous rencontrez un problème en utilisant IP7 ou en déployant le projet IP7, commencez par chercher la réponse dans le « Centre d'aide ». Si vous ne la trouvez pas et que vous restez bloqué, ouvrez une issue sur GitHub ou écrivez-nous par email.",
       "Et si vous tombez sur un bug et que vous aimez coder (ou coder avec l'IA), n'hésitez surtout pas à nous envoyer directement une PR avec votre correctif.",
       "Notre email : i[AT]ipcheck.ing."
     ],

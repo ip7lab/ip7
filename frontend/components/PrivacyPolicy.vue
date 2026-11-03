@@ -149,7 +149,7 @@ const bullets = (id) => {
 // uses the always-loaded about.Privacy key; the description (from the on-demand
 // pack) fills in once ready — watchEffect re-runs when it loads.
 useDocumentMeta(() => ({
-  title: `${t('about.Privacy')} · IPCheck.ing`,
+  title: `${t('about.Privacy')} · IP7`,
   description: ready.value ? t('privacy.Intro') : '',
   canonical: `${window.location.origin}/privacy`,
 }));

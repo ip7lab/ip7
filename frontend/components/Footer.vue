@@ -113,25 +113,11 @@
         <nav :aria-label="t('footer.Clients')">
           <h3 :class="headingClass">{{ t('footer.Clients') }}</h3>
           <ul class="space-y-2">
-            <li>
-              <a href="https://www.raycast.com/jason5ng32/ipcheck-ing" target="_blank" rel="noopener" :class="linkClass"
-                @click="trackEvent('Footer', 'FooterClick', 'Raycast')">
-                <Icon icon="simple-icons:raycast" class="size-4 shrink-0" />
-                {{ t('footer.Raycast') }}
-              </a>
-            </li>
             <li v-if="curlDomainsHadSet">
               <button type="button" :class="linkClass" @click="openCurl">
                 <Terminal class="size-4 shrink-0" />
                 {{ t('curl.Title') }}
               </button>
-            </li>
-            <li>
-              <a href="https://lite.ipcheck.ing" target="_blank" rel="noopener" :class="linkClass"
-                @click="trackEvent('Footer', 'FooterClick', 'Lite')">
-                <Feather class="size-4 shrink-0" />
-                {{ t('footer.Lite') }}
-              </a>
             </li>
           </ul>
         </nav>
@@ -139,7 +125,7 @@
 
       <!-- Signature bar: every deployment; the copyright only when self-hosted -->
       <div class="flex flex-col items-center gap-y-1.5 border-t border-secondary py-6 text-center text-xs opacity-70">
-        <span>Created by Jason Ng with love</span>
+        <span>Created by IP7 Lab with love</span>
         <span v-if="!configs.originalSite">
           {{ t('page.copyRightName') }}
           <a :href="t('page.copyRightLink')" target="_blank" rel="noopener"
@@ -331,19 +317,12 @@ const changeText = (change) => fallbackChain(locale.value).map((code) => change[
 
 const sheetBody = ref(null);
 
-const personalLinks = [
-  { href: 'https://wujiaxian.com', labelKey: 'about.personal' },
-  { href: 'https://kenengba.com', labelKey: 'about.blog' },
-  { href: 'https://www.linkedin.com/in/jason5ng32/', labelKey: 'about.linkedIn' },
-  { href: 'https://twitter.com/jason5ng32', labelKey: 'about.twitter' },
-];
 
 // About tab layout: one entry per section, rendered in order. `key` names the
 // paragraph array under `about.` in the locale files; `titleKey` is omitted for
 // the lead-in section, and `links` appends a link grid under the paragraphs.
 const aboutSections = [
   { key: 'project' },
-  { key: 'founder', titleKey: 'about.founderTitle', links: personalLinks },
   { key: 'contact', titleKey: 'about.contactTitle' },
 ];
 
@@ -353,7 +332,7 @@ const acknowledgementsList = [
   { name: 'Nikolai Tschacher', link: 'https://incolumitas.com/pages/about/' },
   { name: 'Project Alexandria (Cloudflare)', link: 'https://www.cloudflare.com/lp/project-alexandria/' },
   { name: 'Cloudflare Speedtest', link: 'https://github.com/cloudflare/speedtest' },
-  { name: 'V.PS', link: 'https://v.ps/?utm_source=ipcheck.ing&utm_medium=acknowledgement&utm_campaign=footer' },
+  { name: 'V.PS', link: 'https://v.ps/?utm_source=ip7&utm_medium=acknowledgement&utm_campaign=footer' },
   { name: 'SwiftProxy', link: 'https://www.swiftproxy.net/?ref=myip' },
   { name: 'Proxy-Seller', link: 'https://proxy-seller.com/?partner=4FEC1644D12240F4' },
   { name: 'Sentry', link: 'https://www.sentry.io/' },

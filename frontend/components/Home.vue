@@ -8,6 +8,21 @@
       <DNSLeaks />
       <SpeedTest />
       <AdvancedTools ref="advancedToolsRef" />
+      <!-- IP 环境泄漏诊断（付费人工服务）：台账 2026-11-02 派单，闲鱼商品已上架。
+           口径：¥39/单、24 小时内交付书面报告；只做诊断与合规整改建议，
+           不卖账号、不卖代理、不承诺任何平台注册/审核结果。 -->
+      <section class="my-6 rounded-md border border-secondary p-4 text-sm">
+        <p class="font-semibold text-foreground">检测结果看不懂？人工诊断（付费）</p>
+        <p class="mt-1 text-muted-foreground">
+          在本站完成检测后，凭结果截图或链接下单，即可获得一份书面诊断报告：
+          泄漏点清单、严重程度，以及针对你自己设备与账号的合规整改步骤，24 小时内交付，¥39/单。
+          只做诊断与合规整改建议，不卖账号、不卖代理、不承诺注册结果。
+        </p>
+        <a href="https://m.tb.cn/h.jTXTy5u?tk=XS1r6ZNcS3n" target="_blank" rel="noopener"
+          class="mt-3 inline-flex items-center gap-1 font-medium text-foreground underline underline-offset-4">
+          前往闲鱼下单：IP 环境泄漏诊断 ¥39/单
+        </a>
+      </section>
     </div>
   </main>
   <FloatingDock :ready="showMaskButton" :mask-active="infoMaskLevel > 0">

@@ -43,7 +43,7 @@ export default async (req, res) => {
         }
 
         // Upstream 429 = monthly quota exhausted. Pass status + code through
-        // so the frontend can point at the sponsor path; not an error for us.
+        // so the frontend can point at the usage dialog; not an error for us.
         if (apiResponse.status === 429) {
             const errorData = await apiResponse.json().catch(() => ({}));
             return res.status(429).json({

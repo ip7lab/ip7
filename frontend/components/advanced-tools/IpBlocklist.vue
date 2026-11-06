@@ -61,7 +61,7 @@
 
             <p v-if="errorMsg" class="text-sm text-destructive">{{ errorMsg }}</p>
 
-            <!-- Monthly quota exhausted: not an error — explain + usage / sponsor path -->
+            <!-- Monthly quota exhausted: not an error — explain + usage dialog path -->
             <div v-if="quotaExceeded"
                 class="flex items-start gap-2 p-3 rounded-md border border-warning/30 bg-warning/10 text-sm text-warning">
                 <Hourglass class="size-4 mt-0.5 shrink-0" />

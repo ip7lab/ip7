@@ -130,7 +130,7 @@ const IPArray = ref([]);
 const ipGeoSource = ref(userPreferences.value.ipGeoSource);
 const usingSource = ref(userPreferences.value.ipGeoSource);
 const fetchStatus = reactive([]);
-// Timing gate for the sponsor slot: flips once every visible card settled.
+// Timing gate for the info banner: flips once every visible card settled.
 const cardsHaveSettled = ref(false);
 
 // Middleware

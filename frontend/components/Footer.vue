@@ -24,11 +24,6 @@
               <Icon icon="ri:github-line" class="size-4" />
               <span>GitHub</span>
             </a>
-            <a href="https://github.com/sponsors/jason5ng32" target="_blank" rel="noopener"
-              class="inline-flex items-center gap-1 text-sm text-[#d63384] no-underline transition-opacity hover:opacity-80">
-              <Icon icon="ri:heart-line" class="size-4" />
-              {{ t('about.Sponsor') }}
-            </a>
           </div>
         </div>
 

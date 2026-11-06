@@ -226,7 +226,7 @@
                                 <p v-if="errorKey" class="text-xs text-destructive">{{ t(errorKey) }}</p>
 
                                 <!-- Monthly quota exhausted: not an error —
-                                     explain + the usage / sponsor path. -->
+                                     explain + the usage dialog path. -->
                                 <div v-if="quotaExceeded"
                                     class="flex items-start gap-2 p-3 rounded-md border border-warning/30 bg-warning/10 text-sm text-warning">
                                     <Hourglass class="size-4 mt-0.5 shrink-0" />
@@ -438,7 +438,7 @@ const run = async () => {
     } catch (error) {
         runStatus.value = 'idle';
         // 429 passed through by the backend: monthly quota exhausted —
-        // retrying can't fix it, show the quota hint (with the sponsor path).
+        // retrying can't fix it, show the quota hint (with the usage dialog path).
         if (error.status === 429) {
             quotaExceeded.value = true;
             store.markQuotaExhausted('persona_check');

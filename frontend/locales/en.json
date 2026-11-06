@@ -37,7 +37,7 @@
       "Title": "Benefits & Usage",
       "Benefit": "Benefits",
       "Note1": "As an open-source product, IP7 is free to use. Maintaining it takes considerable effort and cost.",
-      "Note2": "To keep the project running sustainably and prevent abuse, some advanced features require signing in. Every signed-in user gets a generous monthly quota — if it's not enough for you, consider sponsoring us to unlock higher limits.",
+      "Note2": "To keep the project running sustainably and prevent abuse, some advanced features require signing in. Every signed-in user gets a generous monthly quota.",
       "Current": "Current",
       "Tiers": {
         "Visitor": {

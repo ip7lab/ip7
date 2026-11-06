@@ -36,7 +36,7 @@
 
             <p v-if="errorMsg" class="text-sm text-destructive">{{ errorMsg }}</p>
 
-            <!-- Monthly quota exhausted: not an error — explain + sponsor path. -->
+            <!-- Monthly quota exhausted: not an error — explain + usage dialog path. -->
             <div v-if="quotaExceeded"
                 class="flex items-start gap-2 p-3 rounded-md border border-warning/30 bg-warning/10 text-sm text-warning">
                 <Hourglass class="size-4 mt-0.5 shrink-0" />
@@ -356,7 +356,7 @@ const getResult = async () => {
     } catch (error) {
         console.error('Error fetching InvisibilityTest results:', error);
         // 429 passed through by the backend: monthly quota exhausted —
-        // retrying can't fix it, show the quota hint (with the sponsor path).
+        // retrying can't fix it, show the quota hint (with the usage dialog path).
         if (error.message.includes('quota_exceeded')) {
             quotaExceeded.value = true;
             store.markQuotaExhausted('invisibility_test');

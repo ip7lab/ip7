@@ -14,8 +14,7 @@
 
                 <!-- Benefits tab: one card per tier, stacked single-column on
                      every viewport. Each tier's first item is "everything in
-                     the previous tier" so the lists stay short; the sponsor
-                     CTA is a button under its card, not a feature row. -->
+                     the previous tier" so the lists stay short. -->
                 <TabsContent value="benefits" class="space-y-3 pt-3">
                     <p class="text-sm text-muted-foreground leading-relaxed">
                         {{ t('user.Benefits.Note1') }} {{ t('user.Benefits.Note2') }}
@@ -48,13 +47,6 @@
                                 </span>
                             </li>
                         </ul>
-                        <Button v-if="tier.key === 'Sponsor' && !isSponsor" as-child size="sm" variant="action"
-                            class="mt-3 w-full">
-                            <a href="https://github.com/sponsors/jason5ng32" target="_blank" rel="noopener">
-                                <Heart class="size-3.5" />
-                                {{ t('user.QuotaSponsorCta') }}
-                            </a>
-                        </Button>
                     </section>
                 </TabsContent>
 
@@ -83,12 +75,6 @@
                                     :indicator-class="dotClass(row.tone)" />
                             </li>
                         </ul>
-                        <p class="text-xs text-muted-foreground leading-relaxed">
-                            {{ t('user.Usage.SponsorNote') }}
-                            <a href="https://github.com/sponsors/jason5ng32" target="_blank" rel="noopener"
-                                class="underline underline-offset-2 hover:text-foreground">{{ t('user.QuotaSponsorCta')
-                                }}</a>
-                        </p>
                     </template>
 
                     <div v-else class="text-sm text-muted-foreground flex items-center justify-center gap-2 py-10">
@@ -112,10 +98,9 @@ import { useStatusTone } from '@/composables/use-status-tone.js';
 import { Dialog, DialogContent, DialogHeader } from '@/components/ui/dialog';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
 import { Progress } from '@/components/ui/progress';
 import { Spinner } from '@/components/ui/spinner';
-import { Check, Heart, HeartHandshake, Info, Plus, UserRound, UserRoundCheck } from '@lucide/vue';
+import { Check, HeartHandshake, Info, Plus, UserRound, UserRoundCheck } from '@lucide/vue';
 
 const { t } = useI18n();
 
@@ -140,14 +125,11 @@ const isUpdateAchievementsSuccess = ref(false);
 const isOpen = ref(false);
 const activeTab = ref('benefits');
 
-// Three user tiers shown on the Benefits tab. `count` = number of ItemN keys
-// in the locale pack; `current` badges the visitor's own tier (sponsor status
-// comes from the backend's quota snapshot).
-const isSponsor = computed(() => remoteUserInfo.value?.quota?.isSponsor === true);
+// Two user tiers shown on the Benefits tab. `count` = number of ItemN keys
+// in the locale pack; `current` badges the visitor's own tier.
 const benefitTiers = computed(() => [
     { key: 'Visitor', icon: UserRound, count: 6, current: !isSignedIn.value },
-    { key: 'SignedIn', icon: UserRoundCheck, count: 7, current: isSignedIn.value && !isSponsor.value },
-    { key: 'Sponsor', icon: HeartHandshake, count: 3, current: isSignedIn.value && isSponsor.value },
+    { key: 'SignedIn', icon: UserRoundCheck, count: 7, current: isSignedIn.value },
 ]);
 
 const openUserBenefits = () => {

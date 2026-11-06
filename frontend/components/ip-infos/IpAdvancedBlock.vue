@@ -6,7 +6,7 @@
 
         <!-- Gated: single CTA banner + 4-field preview grid with *** values.
              Signed-out shows the sign-in copy; over-quota shows the monthly
-             quota copy + sponsor link instead. -->
+             quota copy + usage dialog instead. -->
         <template v-if="allAdvancedLocked || allAdvancedQuotaExceeded">
             <span
                 class="w-full flex items-center justify-between gap-2 text-xs px-2.5 py-1.5 rounded-md bg-muted/60 text-muted-foreground transition-colors group">
@@ -17,7 +17,7 @@
                     </span>
                 </span>
                 <!-- Opens the Benefits & Usage dialog (usage tab for signed-in
-                     users) — the sponsor path lives there, not a direct jump. -->
+                     users) — usage details live there, not a direct jump. -->
                 <button v-if="allAdvancedQuotaExceeded" type="button"
                     class="shrink-0 underline underline-offset-2 hover:text-foreground cursor-pointer"
                     @click="openUsageDialog">

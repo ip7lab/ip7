@@ -206,7 +206,6 @@ Si projekt me burim të hapur, jam shumë mirënjohës për mbështetjen e spons
 <p><a href="https://www.sentry.io"><img src="https://res.ipcheck.ing/img/sentry_logo.png" alt="Sentry" height="32" /></a></p>
 <p><a href="https://www.gitbook.com"><img src="https://res.ipcheck.ing/img/gitbook_logo.png" alt="GitBook" height="32" /></a></p>
 
-Jeni të interesuar të sponsorizoni MyIP? [Bëhu sponsor](https://github.com/sponsors/jason5ng32)
 
 ## 📄 Licenca
 

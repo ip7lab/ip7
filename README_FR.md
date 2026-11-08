@@ -206,7 +206,6 @@ En tant que projet open source, je suis très reconnaissant aux sponsors suivant
 <p><a href="https://www.sentry.io"><img src="https://res.ipcheck.ing/img/sentry_logo.png" alt="Sentry" height="32" /></a></p>
 <p><a href="https://www.gitbook.com"><img src="https://res.ipcheck.ing/img/gitbook_logo.png" alt="GitBook" height="32" /></a></p>
 
-Envie de soutenir MyIP ? [Devenir sponsor](https://github.com/sponsors/jason5ng32)
 
 ## 📄 Licence
 

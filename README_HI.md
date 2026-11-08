@@ -206,7 +206,6 @@ DOMAIN,ptest-12.ipcheck.ing,Proxy12
 <p><a href="https://www.sentry.io"><img src="https://res.ipcheck.ing/img/sentry_logo.png" alt="Sentry" height="32" /></a></p>
 <p><a href="https://www.gitbook.com"><img src="https://res.ipcheck.ing/img/gitbook_logo.png" alt="GitBook" height="32" /></a></p>
 
-MyIP को स्पॉन्सर करना चाहते हैं? [स्पॉन्सर बनें](https://github.com/sponsors/jason5ng32)
 
 ## 📄 लाइसेंस
 

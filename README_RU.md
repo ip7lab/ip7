@@ -185,6 +185,10 @@ DOMAIN,ptest-12.ipcheck.ing,Proxy12
 
 **Спонсоры**
 
+<a href="https://www.swiftproxy.net/?code=F533LWP2P"><img src="https://res.ipcheck.ing/img/swiftproxy_logo.png" alt="SwiftProxy" height="48" /></a><br />
+<sub>↳ **<a href="https://www.swiftproxy.net/?code=F533LWP2P">SwiftProxy</a>** — High-quality rotating and static residential proxies, with 90M+ residential IPs across 220+ locations worldwide. It supports HTTP(S), SOCKS5, rotating and sticky sessions, with residential proxy plans starting at just $0.7/GB. Use code `PROXY90` for an additional 10% off.
+</sub>
+
 ----
 
 **Поддержка**

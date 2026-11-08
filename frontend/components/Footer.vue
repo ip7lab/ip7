@@ -327,6 +327,7 @@ const acknowledgementsList = [
   { name: 'Nikolai Tschacher', link: 'https://incolumitas.com/pages/about/' },
   { name: 'Project Alexandria (Cloudflare)', link: 'https://www.cloudflare.com/lp/project-alexandria/' },
   { name: 'Cloudflare Speedtest', link: 'https://github.com/cloudflare/speedtest' },
+  { name: 'SwiftProxy', link: 'https://www.swiftproxy.net/?code=F533LWP2P' },
   { name: 'Sentry', link: 'https://www.sentry.io/' },
   { name: '1Password', link: 'https://www.1password.com/' },
   { name: 'Greptile', link: 'https://www.greptile.com/' },

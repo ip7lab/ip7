@@ -185,6 +185,10 @@ DOMAIN,ptest-12.ipcheck.ing,Proxy12
 
 **Sponsors**
 
+<a href="https://www.swiftproxy.net/?code=F533LWP2P"><img src="https://res.ipcheck.ing/img/swiftproxy_logo.png" alt="SwiftProxy" height="48" /></a><br />
+<sub>↳ **<a href="https://www.swiftproxy.net/?code=F533LWP2P">SwiftProxy</a>** — พร็อกซี residential คุณภาพสูงทั้งแบบหมุนเวียนและแบบคงที่ มี IP residential มากกว่า 90 ล้าน IP ในกว่า 220 พื้นที่ทั่วโลก รองรับ HTTP(S), SOCKS5, session แบบหมุนเวียนและแบบคงที่ แพ็กเกจ residential เริ่มต้นเพียง $0.7/GB ใช้โค้ด `PROXY90` รับส่วนลดเพิ่มอีก 10%
+</sub>
+
 ----
 
 **Supporters**

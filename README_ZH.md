@@ -185,6 +185,10 @@ DOMAIN,ptest-12.ipcheck.ing,Proxy12
 
 **赞助商**
 
+<a href="https://www.swiftproxy.net/?code=F533LWP2P"><img src="https://res.ipcheck.ing/img/swiftproxy_logo.png" alt="SwiftProxy" height="48" /></a><br />
+<sub>↳ **<a href="https://www.swiftproxy.net/?code=F533LWP2P">SwiftProxy</a>** — 提供高质量动态和静态住宅代理，拥有 9000 万+住宅 IP，覆盖全球 220+ 个地区，支持 HTTP(S)、SOCKS5 协议及动态轮换和粘性会话。动态住宅代理低至 $0.7/GB，使用优惠码 `PROXY90` 再享九折优惠。
+</sub>
+
 ----
 
 **支持者**

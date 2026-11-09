@@ -52,6 +52,11 @@
               </RouterLink>
             </li>
             <li>
+              <a href="/articles/" :class="linkClass" @click="trackEvent('Footer', 'FooterClick', 'Articles')">
+                {{ t('footer.Articles') }}
+              </a>
+            </li>
+            <li>
               <a :href="`${t('page.footerLink')}/blob/main/LICENSE`" target="_blank" rel="noopener" :class="linkClass"
                 @click="trackEvent('Footer', 'FooterClick', 'License')">
                 {{ t('footer.License') }}

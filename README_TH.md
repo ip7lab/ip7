@@ -189,6 +189,10 @@ DOMAIN,ptest-12.ipcheck.ing,Proxy12
 <sub>↳ **<a href="https://www.swiftproxy.net/?code=F533LWP2P">SwiftProxy</a>** — พร็อกซี residential คุณภาพสูงทั้งแบบหมุนเวียนและแบบคงที่ มี IP residential มากกว่า 90 ล้าน IP ในกว่า 220 พื้นที่ทั่วโลก รองรับ HTTP(S), SOCKS5, session แบบหมุนเวียนและแบบคงที่ แพ็กเกจ residential เริ่มต้นเพียง $0.7/GB ใช้โค้ด `PROXY90` รับส่วนลดเพิ่มอีก 10%
 </sub>
 
+<a href="https://proxy-seller.com/?partner=3F9CB5B3DF0A46F9"><img src="https://res.ipcheck.ing/img/proxyseller_logo.png" alt="Proxy-Seller" height="48" /></a><br />
+<sub>↳ **<a href="https://proxy-seller.com/?partner=3F9CB5B3DF0A46F9">Proxy-Seller</a>** — ให้บริการพร็อกซีส่วนตัวแบบ residential, mobile (4G/5G/LTE), ISP และดาต้าเซ็นเตอร์ทั้ง IPv4/IPv6 รองรับ HTTP(S) และ SOCKS5 มี IP residential มากกว่า 47 ล้าน IP ในกว่า 220 พื้นที่ เลือกประเทศ/เมือง/ISP ได้แม่นยำ uptime 99.7% และซัพพอร์ตตลอด 24 ชั่วโมง ผู้ใช้ MyIP ใช้โค้ด `KLDOLH_729611` รับส่วนลด 10%
+</sub>
+
 ----
 
 **Supporters**
